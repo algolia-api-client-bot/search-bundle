@@ -53,8 +53,8 @@ class ConfigurationTest extends BaseTest
                 [
                     "prefix" => "sf_",
                     "indices" => [
-                        ['name' => 'posts', 'class' => 'App\Entity\Post'],
-                        ['name' => 'tags', 'class' => 'App\Entity\Tag', 'enable_serializer_groups' => true],
+                        ['name' => 'posts', 'class' => 'App\Entity\Post', 'index_if' => null],
+                        ['name' => 'tags', 'class' => 'App\Entity\Tag', 'enable_serializer_groups' => true, 'index_if' => null],
                     ],
                 ],[
                     "prefix" => "sf_",
@@ -64,11 +64,13 @@ class ConfigurationTest extends BaseTest
                     "indices" => [
                         'posts' => [
                             'class' => 'App\Entity\Post',
-                            'enable_serializer_groups' => false
+                            'enable_serializer_groups' => false,
+                            'index_if' => null,
                         ],
                         'tags' => [
                             'class' => 'App\Entity\Tag',
-                            'enable_serializer_groups' => true
+                            'enable_serializer_groups' => true,
+                            'index_if' => null,
                         ],
                     ],
                 ]
