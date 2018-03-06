@@ -1,6 +1,21 @@
 CHANGELOG
 =========
 
+3.1.0
+-----
+
+* Feature: Index entities conditionally (using a dedicated method)
+
+    Add new `index_if` configuration key for indices.
+    This should be the name of a method in the entity that
+    returns true if the item should be index (false to bypass indexing).
+    
+    Example:
+        - indices:
+            - name: posts
+              class: App\Entity\Post
+              index_if: isPublished
+
 2.2.0
 -----
 
