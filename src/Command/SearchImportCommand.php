@@ -40,7 +40,7 @@ class SearchImportCommand extends IndexCommand
 
             $output->writeln(sprintf(
                 'Indexed <comment>%s / %s</comment> %s entities into %s index',
-                $response[$indexName],
+                isset($response[$indexName]) ? $response[$indexName] : 0,
                 count($entities),
                 $entityClassName,
                 '<info>'.$config['prefix'].$indexName.'</info>'
